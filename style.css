@@ -249,19 +249,36 @@ a{
 @media screen and (max-width: 768px) {
 
     body {
-        padding-top: 120px;
+        padding-top: 140px;
     }
 
-    /* Menü marad vízszintes */
+    /* Menü */
     .menul {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        font-size: 16px;
+        display: flex;
+        flex-direction: column;   /* VISSZA oszlopba */
+        align-items: center;
+        font-size: 18px;
+        padding: 0;
+        margin: 0;
     }
 
     .menuil {
-        padding: 10px 15px;
+        width: 100%;
+        padding: 10px 0;
+        border-top: 1px solid #555;
+    }
+
+    .menu a {
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    /* Dropdown */
+    .dropdown-content {
+        position: static;
+        transform: none;
+        width: 100%;
+        text-align: center;
     }
 
     /* Szöveg */
@@ -285,7 +302,6 @@ a{
     .reszel,
     .forraszt {
         width: 90% !important;
-        height: auto;
     }
 
     /* Flex elemek */
