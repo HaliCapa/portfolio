@@ -446,41 +446,38 @@ a{
     }
 
 	  	  /* =========================
-		TAPASZTALAT - OSZLOPOK VÍZSZINTESEN
-    		========================= */
+       KÉPESSÉGEK → EGYSZERŰ OSZLOP
+    ========================= */
 
     .kepessegek {
-        display: flex !important;
-        flex-direction: row !important;
-        overflow-x: auto;
-        gap: 10px;
-        padding: 10px;
-        scroll-snap-type: x mandatory;
+        display: block !important;
     }
 
     .oszlop {
-        min-width: 80%;
-        flex: 0 0 auto;
-        scroll-snap-align: start;
-        border-right: none;
+        width: 100% !important;
+        border-right: none !important;
+        border-bottom: 1px solid #ccc;
+        padding: 12px 0;
+    }
+
+    .oszlop:last-child {
         border-bottom: none;
-        background: #f5f5f5;
-        border-radius: 10px;
     }
 
     /* =========================
-       KÉPEK AZ ELSŐ SZÖVEG ALÁ
+       KÉPEK AZ ELSŐ SZÖVEG ALÁ (VISZUÁLIS REND)
     ========================= */
 
-    .tapasztalat-kepek {
-        display: flex;
-        justify-content: center;
-        gap: 10px;
-        margin: 10px 0;
+    .p img {
+        display: block !important;
+        float: none !important;
+        margin: 10px auto;
+        max-width: 90%;
+        height: auto;
     }
 
-    .tapasztalat-kepek img {
-        width: 45%;
-        height: auto;
+    /* az első 2 kép (plc + lampa) egymás alatt */
+    .p > img {
+        width: 90% !important;
     }
 }
