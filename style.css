@@ -391,31 +391,45 @@ a{
        2. MUNKÁIM OLDAL
     ========================= */
 
-    .arduino {
-        width: 70px !important;
-        height: auto !important;
-    }
-
-    table {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 10px;
-    }
-
-    .p {
+    /* szöveg középre */
+    body .p {
         text-align: center !important;
     }
 
+    /* Arduino képek EGYMÁS MELLETT */
+    table {
+        display: flex !important;
+        justify-content: center;
+        gap: 10px;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    .arduino {
+        width: 80px !important;
+        height: auto !important;
+    }
+
+    /* minden szöveg blokk középre */
+    .p p {
+        text-align: center !important;
+    }
+
+    /* freki + motor + többi EGYMÁS ALATT */
     .freki,
     .motor,
     .reszel,
     .forraszt {
-        width: 80% !important;
-        margin: 10px auto !important;
+        width: 85% !important;
+        float: none !important;
+        display: block;
+        margin: 10px auto;
     }
 
+    /* hosszú inline szöveg blokkok */
+    div p {
+        text-align: center !important;
+    }
     /* =========================================================
        3. TAPASZTALAT OLDAL
     ========================================================= */
