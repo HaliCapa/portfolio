@@ -312,57 +312,65 @@ a{
 
 
 
-/* ========================= */
-/* MOBIL NÉZET FIX (jobb verzió) */
-/* ========================= */
-
 @media screen and (max-width: 768px) {
 
+    /* =========================
+       MENÜ FIX
+    ========================= */
+
+    .menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+
+    .menul {
+        flex-direction: column;
+        align-items: center;
+        font-size: 18px;
+    }
+
+    .menuil {
+        padding: 8px 0;
+    }
+
+    .lines {
+        width: 30px;
+        height: 4px;
+    }
+
+    /* FONTOS: ne takarja a tartalmat */
     body {
         padding-top: 160px;
     }
 
-    /* Menü */
-	.menu {
-        position: fixed;
-        top: 0;
-        width: 100%;
-    }
-	
-    .menul {
-        flex-direction: column;
-        align-items: center;
-        font-size: 20px;
-    }
+    /* =========================
+       SZÖVEG
+    ========================= */
 
-    .menuil {
-        padding: 15px 0;
-    }
-
-    /* Dropdown normálisan jelenjen meg */
-    .dropdown-content {
-        position: static;
-        transform: none;
-        width: 100%;
-        text-align: center;
-    }
-
-    /* Szöveg */
     .p, .en {
         font-size: 16px;
+        line-height: 1.6;
         margin: 10px;
+        text-align: justify;
     }
 
-    /* Összes kép */
+    /* =========================
+       KÉPEK (LEGFONTOSABB RÉSZ)
+    ========================= */
+
     img {
-        max-width: 100%;
+        max-width: 90%;
         height: auto;
-        float: none !important;
         display: block;
+        float: none !important;
         margin: 15px auto;
     }
 
-    /* Specifikus képek */
+    .pic,
+    .gt,
+    .tdk,
     .arduino,
     .freki,
     .motor,
@@ -370,38 +378,36 @@ a{
     .forraszt,
     .kepek,
     .vizsz-kepek {
+        width: 85% !important;
+        height: auto !important;
+    }
+
+    /* =========================
+       MAPOK
+    ========================= */
+
+    .map,
+    .maptdk {
         width: 90% !important;
-        height: auto;
+        height: 250px !important;
+        border-radius: 20px;
     }
 
-    /* FLEX elemek oszlopba */
-    div[style*="display:flex"] {
-        flex-direction: column !important;
-    }
+    /* =========================
+       DROPDOWN MENÜ
+    ========================= */
 
-    /* Táblázat */
-    table {
+    .dropdown-content {
+        position: static;
+        transform: none;
         width: 100%;
-        float: none;
-        margin: 20px 0;
+        text-align: center;
     }
 
-    /* Kód blokk */
-    p[style*="overflow:auto"] {
-        width: 100% !important;
-        float: none;
-        margin: 20px 0;
-    }
+    /* =========================
+       GRID / KÉPESSÉGEK
+    ========================= */
 
-    /* Két oszlopos szövegek */
-    p[style*="margin-right:50%"],
-    p[style*="padding-left:32%"],
-    p[style*="padding-right:32%"] {
-        margin: 0 !important;
-        padding: 10px !important;
-    }
-
-    /* Képességek grid */
     .kepessegek {
         grid-template-columns: 1fr;
         margin: 10px;
@@ -414,5 +420,19 @@ a{
 
     .oszlop:last-child {
         border-bottom: none;
+    }
+
+    /* =========================
+       FLEX BLOKKOK
+    ========================= */
+
+    .munkaim {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .polaroid {
+        width: 90%;
+        height: auto;
     }
 }
