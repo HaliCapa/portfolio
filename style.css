@@ -344,7 +344,7 @@ a{
        SZÖVEG
     ========================= */
 
-    .p, .en {
+     .en {
         font-size: 16px;
         line-height: 1.6;
         margin: 10px;
@@ -427,7 +427,7 @@ a{
     }
 
     .arduino {
-        width: 100px !important;
+        width: 95px !important;
         height: auto !important;
     }
 
