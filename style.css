@@ -329,9 +329,9 @@ a{
 
 @media screen and (max-width: 768px) {
 
-	.body{
-		padding-top:160px;
-	}
+	    body {
+        padding-top: 180px !important;
+    }
 	
     /* =========================
        KÉPEK OLDAL - TÁBLÁZAT FIX
