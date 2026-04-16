@@ -1,0 +1,265 @@
+<html class="scroll">
+	<head>
+		<link rel='stylesheet' href='style.css' type="text/css">
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=0.5">
+		<title>Portfolio</title>
+	</head>
+	<body>
+		<div class="menu">
+			<ul class="menul">
+				<li class="menuil">
+					<a href="index.html #rolam">
+						<span>Bemutatkozás</span>
+					</a>
+				</li>
+			
+				<li class="menuil">
+					<a href="index.html #tanulmanyaim">
+						<span>Tanulmányaim</span>
+					</a>
+				</li>
+			
+				<li class="menuil">
+					<a href="index.html #dualiskepzes">
+						<span>Duális képzés</span>
+					</a>
+				</li>
+				
+				<li class="menuil dropdown">
+					<a href="#munkaim">
+						<span>
+							<div class="lines"></div>
+							<div class="lines"></div>
+							<div class="lines"></div>
+						</span>
+					</a>
+					
+					<ul class="dropdown-content">
+						<li><a href="munkaim.html">Munkáim</a></li>
+						<li><a href="tapasztalat.html">Tapasztalataim</a></li>
+						<li><a href="jovo.html">Céljaim</a></li>
+						<li><a href="kepek.html">Képek</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<div style="margin-top:150px;" class="p">
+			<p class="divider menul tanhead">Ezen az oldalon az elmúlt évek alatt készült munkáim és projektjeim kerülnek bemutatásra.</p>
+			
+			<p>A képen egy Arduino Mega és egy jelzőlámpa vezérlés látható. Az egyik gyakorlati napon raktuk össze mikor az Arduinok programozását tanultuk.</p>
+			
+			<table style="float:right; margin-right:12%;">
+				<tr>
+					<th><img src="arduino_p.jpg" class="arduino"></th>
+					<th><img src="arduino_ps.jpg" class="arduino"></th>
+					<th><img src="arduino_z.jpg" class="arduino"></th>
+					<th><img src="arduino_s.jpg" class="arduino"></th>
+				</tr>
+			</table>
+			
+			<p>Alkatrész lista:</p>
+			
+			<ul>
+				<li>Arduino Mega</li>
+				<li>5db led</li>
+				<li>hétszegmenses kijelző</li>
+				<li>buzzer</li>
+				<li>10k ohmos ellenállás</li>
+				<li>1k ohmos ellenállás</li>
+				<li>5db 220 ohmos ellenállás</li>
+			</ul>
+			<div>
+				<p style="height:30%; width:45%; border:1px solid #ccc; overflow:auto; padding:5px; float:right;">
+			
+#define buzz 52<br>
+#define g 5<br>
+#define f 4<br>
+#define a 3<br>
+#define b 2<br>
+#define d 7<br>
+#define c 6<br>
+#define e 8<br>
+#define piros 26<br>
+#define sarga 28<br>
+#define zold 30<br>
+#define gyp 25<br>
+#define gyz 27<br><br>
+void setup() {<br><br>
+pinMode(piros,OUTPUT);<br>
+pinMode(sarga,OUTPUT);<br>
+pinMode(zold,OUTPUT);<br>
+pinMode(gyp,OUTPUT);<br>
+pinMode(gyz,OUTPUT);<br>
+pinMode(buzz, OUTPUT);<br>
+<br>
+}<br><br>
+void loop() {<br><br>
+//Zöld a lámpa<br>
+digitalWrite(zold,HIGH);<br>
+digitalWrite(gyp,HIGH);<br>
+<br>
+delay(8000);<br>
+//Sárga a lámpa<br>
+digitalWrite(zold,LOW);<br>
+digitalWrite(sarga,HIGH);<br>
+<br>
+delay(2000);<br>
+//Piros a lámpa, zöld a gyalogos lámpa, 8 a számláló<br>
+digitalWrite(sarga,LOW);<br>
+digitalWrite(piros,HIGH);<br>
+digitalWrite(gyp,LOW);<br>
+digitalWrite(gyz,HIGH);<br>
+digitalWrite(a,HIGH);<br>
+digitalWrite(b,HIGH);<br>
+digitalWrite(c,HIGH);<br>
+digitalWrite(d,HIGH);<br>
+digitalWrite(e,HIGH);<br>
+digitalWrite(f,HIGH);<br>
+digitalWrite(g,HIGH);<br>
+<br>
+delay(1000);<br>
+//7 a számláló<br>
+digitalWrite(d,LOW);<br>
+digitalWrite(e,LOW);<br>
+digitalWrite(f,LOW);<br>
+digitalWrite(g,LOW);<br>
+digitalWrite(a,HIGH);<br>
+digitalWrite(b,HIGH);<br>
+digitalWrite(c,HIGH);<br>
+<br>
+delay(1000);<br>
+//6 a számláló<br>
+digitalWrite(b,LOW);<br>
+digitalWrite(a,HIGH);<br>
+digitalWrite(f,HIGH);<br>
+digitalWrite(g,HIGH);<br>
+digitalWrite(e,HIGH);<br>
+digitalWrite(d,HIGH);<br>
+digitalWrite(c,HIGH);<br>
+<br>
+delay(1000);<br>
+//5 a számláló<br>
+digitalWrite(e,LOW);<br>
+digitalWrite(a,HIGH);<br>
+digitalWrite(f,HIGH);<br>
+digitalWrite(g,HIGH);<br>
+digitalWrite(c,HIGH);<br>
+digitalWrite(d,HIGH);<br>
+<br>
+delay(1000);<br>
+//4 a számláló<br>
+digitalWrite(a,LOW);<br>
+digitalWrite(d,LOW);<br>
+digitalWrite(b,HIGH);<br>
+digitalWrite(f,HIGH);<br>
+digitalWrite(g,HIGH);<br>
+digitalWrite(c,HIGH);<br>
+<br>
+delay(1000);<br>
+//3 a számláló<br>
+digitalWrite(f,LOW);<br>
+digitalWrite(a,HIGH);<br>
+digitalWrite(b,HIGH);<br>
+digitalWrite(g,HIGH);<br>
+digitalWrite(c,HIGH);<br>
+digitalWrite(d,HIGH);<br>
+<br>
+delay(1000);<br>
+//2 a számláló és villog a gyalogos lámpa zölden és sípol<br>
+digitalWrite(c,LOW);<br>
+digitalWrite(b,HIGH);<br>
+digitalWrite(g,HIGH);<br>
+digitalWrite(e,HIGH);<br>
+digitalWrite(d,HIGH);<br>
+digitalWrite(gyz,HIGH);<br>
+tone(buzz,1000);<br>
+<br>
+delay(500);<br>
+//síp off<br>
+noTone(buzz);<br>
+digitalWrite(gyz,LOW);<br>
+<br>
+delay(500);<br>
+//1 a számláló és villog a gyalogos lámpa zölden és sípol<br>
+digitalWrite(gyz,HIGH);<br>
+tone(buzz,1000);<br>
+digitalWrite(g,LOW);<br>
+digitalWrite(e,LOW);<br>
+digitalWrite(d,LOW);<br>
+digitalWrite(a,LOW);<br>
+digitalWrite(b,HIGH);<br>
+digitalWrite(c,HIGH);<br>
+<br>
+delay(500);<br>
+//síp off<br>
+noTone(buzz);<br>
+digitalWrite(gyz,LOW);<br>
+<br>
+delay(500);<br>
+//piros és sárga a lámpa<br>
+digitalWrite(b,LOW);<br>
+digitalWrite(c,LOW);<br>
+digitalWrite(gyz,LOW);<br>
+digitalWrite(sarga,HIGH);<br>
+<br>
+delay(1000);<br>
+//zöld a lámpa és piros a gyalogos lámpa<br>
+digitalWrite(piros,LOW);<br>
+digitalWrite(sarga,LOW);<br>
+digitalWrite(gyp,LOW);<br>
+  
+}<br>
+
+				
+				</p>
+				<p style="margin-right:50%;padding-top:5%;">A programban szinkronban vezérlünk mindent, lemásolva az eredeti forgalmi és gyalogos jelzőlámpát. A kijelző a gyalogosok áthaladási idejét jelzi 8-tól visszafelé számolva. Miközben a gyalogos lámpa villogni kezd, a buzzer jelzi hogy hamarosan pirosra vált és ismét zöld utat kapnak az autósok.</p>
+			
+				
+			</div>
+			
+		</div>
+		
+		<div class="p">
+			<p class="elvalaszt"></p>
+			<p class="divider szoveg menul tanhead">.</p>
+			
+			<div>
+				<img src="frekivalto.jpg" class="freki">
+				<p style="text-align:justify; padding-top:10%; padding-left:32%; padding-right:5%;">Egy szerelődobozba bekötöttünk egy frekvenciaváltót majd arra rá egy háromfázisú motort amit eleinte csak egy gombbal működtettünk. Ezután mellé kötötttünk egy transzformátort hogy a reléket is megfelelően be tudjuk kötni. Ezután két gomb és a relé segítségével létrehoztunk egy öntartást és immáron a 2 gombbal vezéreltük a motort.</p>
+			</div><br><br><br><br><br>
+			<div>
+				<img src="motor1.jpg" class="motor">
+				<p style="text-align:justify; padding-top:10%; padding-left:5%; padding-right:32%;">Nyári gyakorlat folyamán csináltunk összetettebb feladatokat is, itt egy háromfázisú motort vezéreltünk gombok és frekvenciaváltó segítségével. A problémamegoldó képességen sokat fejlődött mert nekünk kellett a táblára felszerelni a motort és a kapcsolóknak is kellett egy irányító doboz, amit mi magunk barkácsoltunk össze.</p>
+			</div>
+		</div>
+		
+		<div class="p">
+			<p class="elvalaszt"></p>
+			<p class="divider szoveg menul tanhead">.</p>
+			
+			<div style="display:flex; align-items:center; justify-content:center; gap:20px;">
+				<img src="hajlitas.jpg" class="reszel">
+				<p style="width:44%; text-align:justify;">9. és 10. osztályban volt órám fémipari alapismeretek címszóval ahol több munkadarabot is elkészítettem, ezek láthatóak az alábbi képeken. Itt betekintést nyerhettem a kézi fémmegmunkálás világába. Elsajátíthattam a reszelés, fúrás és kerekítések technikáját, több-kevesebb sikerrel. TDK-s nyári gyakorlatom során lehetőségem nyílt beletanulni a kézi alumíniumhajlításba is, egy kis tálat próbáltam hajlítani. Ezekhez erősen kötődött a műszaki rajz is, ahol megrajzoltam, megterveztem ezeket a munkadarabokat, méreteztem és megtanultam hogy a precizitásnál és pontosságnál nincs fontosabb.</p>
+				<img src="reszeles.jpg" class="reszel">
+			</div>
+		</div>
+		
+		<div class="p">
+			<p class="elvalaszt"></p>
+			<p class="divider szoveg menul tanhead">.</p>
+			
+			<p style="margin-left:5%;">
+				<img src="kocka.jpg" class="forraszt">
+				<img src="forrasztas_back.jpg" class="forraszt">
+			</p>
+			<p style="text-align:justify; padding-top:7%; padding-left:32%; padding-right:5%;">Próbálkoztam forrasztásokkal is, ezeket vagy szabadidőmben vagy a duális képzés keretein belül csináltam tanulás, gyakorlás céllal. A képeken látható egy vezetékekből forrasztott kocka, egy vasúti átjárót szimuláló áramkör. Az iskolában is foglalkoztunk alapszinten forrasztással, itt berendelhető kiteket forrasztottunk.</p>
+		</div>
+		
+		<div class="p">
+			<p class="elvalaszt"></p>
+			<p class="divider menul tanhead">A fel nem sorolt munkáim a felsoroltakkal együtt a "képek" elnevezésű menüpontban érhetők eleinte.</p>
+		</div>
+		
+	</body>
+</html>
