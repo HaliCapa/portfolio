@@ -327,65 +327,88 @@ a{
 
 
 
+/* ========================================== */
+/* MOBIL ÉS TABLET NÉZET (Reszponzív javítás) */
+/* ========================================== */
+
 @media screen and (max-width: 768px) {
-
-	body {
-        padding-top: 180px !important;
-    }
-
-	.menu {
-        height: auto;
+    
+    /* 1. Menü és Tartalom eltolása */
+    /* Mivel a menü fixed, lejjebb kell tolni a tartalmat, hogy ne takarja ki */
+    .en, .p {
+        padding-top: 140px !important; 
+        margin-left: 15px !important;
+        margin-right: 15px !important;
+        font-size: 18px !important; /* Jobban olvasható betűméret mobilon */
     }
 
     .menul {
-        flex-direction: column;
-        align-items: center;
+        flex-wrap: wrap; /* Ha nem fér ki, törjön több sorba */
+        padding: 5px 0;
+        font-size: 18px !important;
     }
 
     .menuil {
-        padding: 6px 0;
+        padding: 5px 10px !important;
     }
 
-	
-    /* =========================
-       KÉPEK OLDAL - TÁBLÁZAT FIX
-    ========================= */
-
-    table {
-        width: 100% !important;
-        border-collapse: collapse;
-        display: block;
-        text-align: center;
-    }
-
-    tr {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
-        margin-bottom: 15px;
-    }
-
-    th {
-        display: block;
-        width: 45%;
-    }
-
-    /* =========================
-       KÉPEK EGYSÉGES MÉRET
-    ========================= */
-
-    .kepek,
-    .vizsz-kepek {
-        width: 100% !important;
-        max-width: 160px;
+    /* 2. Képek és Szöveg elrendezése */
+    /* Mobilon tiltsuk le a float-ot (lebegtetést), hogy ne legyen vékony a szövegsáv */
+    .pic, .gt, .tdk, .freki, .motor, .reszel, .forraszt, .arduino {
+        float: none !important;
+        display: block !important;
+        width: 100% !important; /* Kitölti a képernyőt */
         height: auto !important;
-        display: block;
-        margin: 5px auto;
+        margin: 15px auto !important;
+        padding: 0 !important;
     }
 
-    /* kép kinézet egységesítés */
-    img {
-        border-radius: 8px;
+    /* 3. Speciális elemek (Arduino kód és leírás) */
+    /* A kódbox ne legyen 45% széles és ne lebegjen jobbra */
+    p[style*="float:right"], 
+    div[style*="float:right"],
+    table[style*="float:right"] {
+        float: none !important;
+        width: 100% !important;
+        margin: 10px 0 !important;
+    }
+
+    p[style*="margin-right:50%"],
+    p[style*="padding-left:32%"],
+    p[style*="padding-right:32%"] {
+        margin: 0 !important;
+        padding: 10px 0 !important;
+    }
+
+    /* 4. Képességek (4 oszlopból legyen 1 vagy 2) */
+    .kepessegek {
+        grid-template-columns: 1fr !important; /* Egymás alá kerülnek */
+        margin: 10px !important;
+    }
+
+    .oszlop {
+        border-right: none !important;
+        border-bottom: 1px solid #999;
+        padding: 15px 0 !important;
+    }
+
+    /* 5. Galéria és Polaroidok */
+    .munkaim {
+        gap: 15px !important;
+    }
+
+    .polaroid {
+        width: 80% !important; /* Mobilon legyen hangsúlyosabb */
+        height: auto !important;
+    }
+
+    /* Flexboxos képsorok (kepek.html) egymás alá */
+    div[style*="display:flex"] {
+        flex-direction: column !important;
+        gap: 10px !important;
+    }
+
+    .kepek, .vizsz-kepek {
+        width: 100% !important;
     }
 }
