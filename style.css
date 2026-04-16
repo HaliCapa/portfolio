@@ -288,6 +288,22 @@ a{
 
 /*Tapasztalat oldal*/
 
+.plc1{
+	width:21.5%;
+	height:auto;
+	display:block;
+	float:left;
+	padding-right:20px;
+}
+
+.lampa{
+	width:20%;
+	height:auto;
+	display:block;
+	float:right;
+	padding-left:20px;
+}
+
 .kepessegek{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
