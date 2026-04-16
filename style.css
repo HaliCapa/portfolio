@@ -319,10 +319,16 @@ a{
 @media screen and (max-width: 768px) {
 
     body {
-        padding-top: 120px;
+        padding-top: 160px;
     }
 
     /* Menü */
+	.menu {
+        position: fixed;
+        top: 0;
+        width: 100%;
+    }
+	
     .menul {
         flex-direction: column;
         align-items: center;
