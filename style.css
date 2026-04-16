@@ -315,7 +315,7 @@ a{
 @media screen and (max-width: 768px) {
 
     /* =========================
-       MENÜ
+       MENÜ (MINDEN OLDALON)
     ========================= */
 
     .menu {
@@ -323,6 +323,7 @@ a{
         top: 0;
         left: 0;
         width: 100%;
+        z-index: 1000;
     }
 
     .menul {
@@ -335,54 +336,95 @@ a{
         padding: 6px 0;
     }
 
-    /* ne takarjon semmit */
     body {
         padding-top: 170px;
     }
 
     /* =========================
-       SZÖVEG
+       ALAP SZÖVEG
     ========================= */
 
-    .p .en {
-        font-size: 16px;
+    .p, .en {
+        font-size: 15px;
         line-height: 1.6;
-        margin: 10px;
         text-align: justify;
+        margin: 10px;
     }
 
     /* =========================
-       KÓD BLOKK
+       MINDEN KÉP ALAP
     ========================= */
 
-    p[style*="overflow:auto"] {
-        width: 95% !important;
-        font-size: 12px;
-        margin: 15px auto !important;
+    img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 10px auto;
         float: none !important;
     }
 
     /* =========================
-       INLINE LAYOUT FIX
+       MUNKÁIM + TECH OLDAL
     ========================= */
 
-    div[style*="float"],
+    table {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        float: none !important;
+    }
+
+    .arduino {
+        width: 70px !important;
+    }
+
+    .freki,
+    .motor,
+    .reszel,
+    .forraszt {
+        width: 80% !important;
+        height: auto !important;
+    }
+
+    /* =========================
+       KÉPEK OLDAL (GRID)
+    ========================= */
+
+    .kepek,
+    .vizsz-kepek {
+        width: 45% !important;
+        height: auto !important;
+    }
+
+    /* container flex fix */
     div[style*="display:flex"] {
-        display: block !important;
+        flex-direction: column !important;
+        align-items: center;
+        gap: 15px;
     }
 
     /* =========================
-       MAP
+       KÉPESSÉGEK (TAPASZTALAT)
     ========================= */
 
-    .map,
-    .maptdk {
-        width: 90% !important;
-        height: 250px !important;
+    .kepessegek {
+        grid-template-columns: 1fr;
+        margin: 10px;
+    }
+
+    .oszlop {
+        border-right: none;
+        border-bottom: 1px solid #ccc;
+    }
+
+    .oszlop:last-child {
+        border-bottom: none;
     }
 
     /* =========================
-       POLAROID / FLEX BLOKK
+       POLAROID (MUNKÁIM KÁRTYÁK)
     ========================= */
 
     .munkaim {
@@ -392,81 +434,15 @@ a{
 
     .polaroid {
         width: 90%;
-        height: auto;
-    }
-
-	
-    /* =========================
-       SZÖVEG KÖZÉPRE
-    ========================= */
-
-    .p {
-        text-align: center !important;
-        font-size: 15px;
-        line-height: 1.5;
-        margin: 10px;
     }
 
     /* =========================
-       ARDUINO KÉPEK SORBAN
+       MAPOK
     ========================= */
 
-    table {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 10px;
-        float: none !important;
-        margin: 10px auto;
-    }
-
-    table th {
-        display: inline-block;
-        padding: 0;
-    }
-
-    .arduino {
-        width: 95px !important;
-        height: auto !important;
-    }
-
-    /* =========================
-       FREKIVÁLTÓ + MOTOR KÉPEK
-    ========================= */
-
-    .freki,
-    .motor {
-        width: 45% !important;
-        height: auto !important;
-        float: none !important;
-        display: inline-block;
-        margin: 5px;
-    }
-
-    /* szöveg mellettük */
-    div p {
-        text-align: center !important;
-        padding: 10px !important;
-    }
-
-    /* =========================
-       FORRASZTÁS KÉPEK EGYSOR
-    ========================= */
-
-    .forraszt {
-        width: 45% !important;
-        display: inline-block;
-        float: none !important;
-        margin: 5px;
-    }
-
-    /* =========================
-       FLEX BLOKKOK
-    ========================= */
-
-    div[style*="display:flex"] {
-        flex-direction: column !important;
-        align-items: center;
+    .map,
+    .maptdk {
+        width: 90% !important;
+        height: 250px !important;
     }
 }
