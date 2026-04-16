@@ -329,9 +329,23 @@ a{
 
 @media screen and (max-width: 768px) {
 
-	    body {
+	body {
         padding-top: 180px !important;
     }
+
+	.menu {
+        height: auto;
+    }
+
+    .menul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menuil {
+        padding: 6px 0;
+    }
+
 	
     /* =========================
        KÉPEK OLDAL - TÁBLÁZAT FIX
