@@ -352,46 +352,6 @@ a{
     }
 
     /* =========================
-       KÉPEK (EGYSÉGESEN)
-    ========================= */
-
-    img {
-        max-width: 95%;
-        height: auto;
-        display: block;
-        float: none !important;
-        margin: 15px auto;
-    }
-
-    .arduino,
-    .freki,
-    .motor,
-    .reszel,
-    .forraszt,
-    .gt,
-    .tdk,
-    .pic {
-        width: 90% !important;
-        height: auto !important;
-    }
-
-    /* =========================
-       TABLE TELJES KIVÉTEL
-    ========================= */
-
-    table {
-        display: block;
-        width: 100%;
-        float: none !important;
-        margin: 15px auto;
-    }
-
-    table th {
-        display: block;
-        text-align: center;
-    }
-
-    /* =========================
        KÓD BLOKK
     ========================= */
 
@@ -409,17 +369,6 @@ a{
     div[style*="float"],
     div[style*="display:flex"] {
         display: block !important;
-    }
-
-    /* =========================
-       MOTOR + SZÖVEG BLOKKOK
-    ========================= */
-
-    p[style*="padding-left"],
-    p[style*="padding-right"],
-    p[style*="margin-right"] {
-        padding: 10px !important;
-        margin: 10px !important;
     }
 
     /* =========================
