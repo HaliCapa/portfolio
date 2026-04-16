@@ -315,7 +315,7 @@ a{
 @media screen and (max-width: 768px) {
 
     /* =========================
-       MENÜ FIX
+       MENÜ
     ========================= */
 
     .menu {
@@ -332,24 +332,19 @@ a{
     }
 
     .menuil {
-        padding: 8px 0;
+        padding: 6px 0;
     }
 
-    .lines {
-        width: 30px;
-        height: 4px;
-    }
-
-    /* FONTOS: ne takarja a tartalmat */
+    /* ne takarjon semmit */
     body {
-        padding-top: 160px;
+        padding-top: 170px;
     }
 
     /* =========================
        SZÖVEG
     ========================= */
 
-    .p {
+    .p, .en {
         font-size: 16px;
         line-height: 1.6;
         margin: 10px;
@@ -357,14 +352,14 @@ a{
     }
 
     /* =========================
-       KÉPEK (LEGJOBB FIX)
+       KÉPEK (EGYSÉGESEN)
     ========================= */
 
     img {
-        max-width: 90%;
+        max-width: 95%;
         height: auto;
-        float: none !important;
         display: block;
+        float: none !important;
         margin: 15px auto;
     }
 
@@ -372,31 +367,43 @@ a{
     .freki,
     .motor,
     .reszel,
-    .forraszt {
-        width: 85% !important;
-        height: auto !important;
-        margin: 10px auto !important;
-        float: none !important;
-    }
-
-    /* =========================
-       TABLE FIX (Arduino képek)
-    ========================= */
-
-    table {
-        float: none !important;
-        margin: 10px auto !important;
-        width: 100% !important;
-        display: block;
-    }
-
-    table img {
+    .forraszt,
+    .gt,
+    .tdk,
+    .pic {
         width: 90% !important;
         height: auto !important;
     }
 
     /* =========================
-       INLINE BLOCKOK (Arduino + szöveg)
+       TABLE TELJES KIVÉTEL
+    ========================= */
+
+    table {
+        display: block;
+        width: 100%;
+        float: none !important;
+        margin: 15px auto;
+    }
+
+    table th {
+        display: block;
+        text-align: center;
+    }
+
+    /* =========================
+       KÓD BLOKK
+    ========================= */
+
+    p[style*="overflow:auto"] {
+        width: 95% !important;
+        font-size: 12px;
+        margin: 15px auto !important;
+        float: none !important;
+    }
+
+    /* =========================
+       INLINE LAYOUT FIX
     ========================= */
 
     div[style*="float"],
@@ -405,32 +412,37 @@ a{
     }
 
     /* =========================
-       KÓD BLOKK (Arduino program)
+       MOTOR + SZÖVEG BLOKKOK
     ========================= */
 
-    p[style*="overflow:auto"] {
-        width: 95% !important;
-        float: none !important;
-        margin: 20px auto !important;
-        font-size: 12px;
-    }
-
-    /* =========================
-       MOTOR + FREKIVÁLTÓ SZEKCIÓ
-    ========================= */
-
-    p[style*="padding-left:32%"],
-    p[style*="padding-right:32%"],
-    p[style*="margin-right:50%"] {
+    p[style*="padding-left"],
+    p[style*="padding-right"],
+    p[style*="margin-right"] {
         padding: 10px !important;
         margin: 10px !important;
     }
 
     /* =========================
-       FORRASZTÁS KÉPEK SORBAN
+       MAP
     ========================= */
 
-    .forraszt {
+    .map,
+    .maptdk {
         width: 90% !important;
+        height: 250px !important;
+    }
+
+    /* =========================
+       POLAROID / FLEX BLOKK
+    ========================= */
+
+    .munkaim {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .polaroid {
+        width: 90%;
+        height: auto;
     }
 }
