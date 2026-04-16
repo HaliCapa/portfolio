@@ -434,14 +434,15 @@ a{
        3. TAPASZTALAT OLDAL
     ========================================================= */
 
+    /* 4 oszlop → 1 oszlop */
     .kepessegek {
         display: block !important;
     }
 
     .oszlop {
         width: 100% !important;
-        border-bottom: 1px solid #ccc;
         border-right: none !important;
+        border-bottom: 1px solid #ccc;
         padding: 10px 0;
     }
 
@@ -449,9 +450,23 @@ a{
         border-bottom: none;
     }
 
-    /* képek az első blokk alatt */
+    /* első blokk képei egymás mellett, szöveg alatt */
     .p img {
-        width: 90% !important;
+        width: 45% !important;
+        display: inline-block;
+        margin: 10px 2%;
+        float: none !important;
+    }
+
+    /* csak az első két kép legyen sorban */
+    .p > img {
+        width: 45% !important;
+    }
+
+    /* többi kép ne torzítson */
+    img {
+        max-width: 90%;
+        height: auto;
     }
 
     /* =========================================================
@@ -463,24 +478,27 @@ a{
         font-size: 16px;
         line-height: 1.7;
         text-align: justify;
+        margin: 12px;
     }
 
     /* =========================================================
        5. KÉPEK OLDAL
     ========================================================= */
 
-    .kepek,
-    .vizsz-kepek {
-        width: 90% !important;
-        height: auto !important;
-    }
-
     table {
         width: 100%;
     }
 
     table img {
-        width: 90% !important;
+        width: 85% !important;
+        height: auto !important;
+        display: block;
+        margin: 10px auto;
+    }
+
+    .kepek,
+    .vizsz-kepek {
+        width: 85% !important;
         height: auto !important;
     }
 }
