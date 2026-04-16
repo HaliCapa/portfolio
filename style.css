@@ -445,4 +445,79 @@ a{
         width: 90%;
         height: auto;
     }
+
+	
+    /* =========================
+       SZÖVEG KÖZÉPRE
+    ========================= */
+
+    .p {
+        text-align: center !important;
+        font-size: 15px;
+        line-height: 1.5;
+        margin: 10px;
+    }
+
+    /* =========================
+       ARDUINO KÉPEK SORBAN
+    ========================= */
+
+    table {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+        float: none !important;
+        margin: 10px auto;
+    }
+
+    table th {
+        display: inline-block;
+        padding: 0;
+    }
+
+    .arduino {
+        width: 70px !important;
+        height: auto !important;
+    }
+
+    /* =========================
+       FREKIVÁLTÓ + MOTOR KÉPEK
+    ========================= */
+
+    .freki,
+    .motor {
+        width: 45% !important;
+        height: auto !important;
+        float: none !important;
+        display: inline-block;
+        margin: 5px;
+    }
+
+    /* szöveg mellettük */
+    div p {
+        text-align: center !important;
+        padding: 10px !important;
+    }
+
+    /* =========================
+       FORRASZTÁS KÉPEK EGYSOR
+    ========================= */
+
+    .forraszt {
+        width: 45% !important;
+        display: inline-block;
+        float: none !important;
+        margin: 5px;
+    }
+
+    /* =========================
+       FLEX BLOKKOK
+    ========================= */
+
+    div[style*="display:flex"] {
+        flex-direction: column !important;
+        align-items: center;
+    }
 }
