@@ -327,3 +327,47 @@ a{
 
 
 
+@media screen and (max-width: 768px) {
+
+    /* =========================
+       KÉPEK OLDAL - TÁBLÁZAT FIX
+    ========================= */
+
+    table {
+        width: 100% !important;
+        border-collapse: collapse;
+        display: block;
+        text-align: center;
+    }
+
+    tr {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        margin-bottom: 15px;
+    }
+
+    th {
+        display: block;
+        width: 45%;
+    }
+
+    /* =========================
+       KÉPEK EGYSÉGES MÉRET
+    ========================= */
+
+    .kepek,
+    .vizsz-kepek {
+        width: 100% !important;
+        max-width: 160px;
+        height: auto !important;
+        display: block;
+        margin: 5px auto;
+    }
+
+    /* kép kinézet egységesítés */
+    img {
+        border-radius: 8px;
+    }
+}
