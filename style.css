@@ -10,7 +10,6 @@ body {
 
 .menu{
 	background-color:#333;
-/*	overflow:hidden; */
 	position:fixed;
 	top:0;
 	width:100%;
@@ -24,11 +23,6 @@ body {
     color:#f2f2f2;
     text-decoration:none;
 }
-
-/*.menu a:hover{
-	background-color:#ddd;
-	color:black;
-}*/
 
 .menu a.active{
 	background-color:#04aa6d;
@@ -250,14 +244,7 @@ a{
 	margin-right:5%;
 }
 
-.reszel{
-	width:20%;
-	height:auto;
-	display:block;
-	float:left;
-	padding:2%;
-	padding-top:0;
-}
+
 
 .forraszt{
 	width:20%;
@@ -275,9 +262,29 @@ a{
 	padding-right:5%;
 }
 
-.hajl_text{
-	width:44%;
-	text-align:justify;
+/* Alap elrendezés (Asztali gép) */
+.hajlitas-szekcio {
+    display: block; /* Kikapcsoljuk a flexboxot, hogy működjön a float */
+    width: 100%;
+    overflow: hidden;
+}
+
+.reszel.balra {
+    float: left;
+    width: 20%;
+    margin-right: 20px;
+}
+
+.reszel.jobbra {
+    float: right;
+    width: 20%;
+    margin-left: 20px;
+}
+
+.hajl_text {
+    width: auto; /* Így kitölti a két kép közötti helyet */
+    text-align: justify;
+    margin: 40 25%; /* Biztosítunk helyet a két oldalsó képnek */
 }
 
 /*Képek oldal*/
@@ -337,23 +344,22 @@ a{
 }
 
 
-
-
 /* ========================================== */
 /* MOBIL ÉS TABLET NÉZET (Reszponzív javítás) */
 /* ========================================== */
 
 @media screen and (max-width: 768px) {
     
-    /* 1. Menü és Tartalom eltolása */
-    /* Mivel a menü fixed, lejjebb kell tolni a tartalmat, hogy ne takarja ki */
-    .en, .p {
+	
+/* 1. Menü és Tartalom eltolása */
+/* Mivel a menü fixed, lejjebb kell tolni a tartalmat, hogy ne takarja ki */	
+	.en, .p {
         padding-top: 100px !important; 
-        margin-left: 15px !important;
+        margin-left: 10px !important;
         margin-right: 15px !important;
         font-size: 18px !important; /* Jobban olvasható betűméret mobilon */
     }
-
+	
     .menul {
         flex-wrap: wrap; /* Ha nem fér ki, törjön több sorba */
         padding: 5px 0;
@@ -364,8 +370,18 @@ a{
         padding: 5px 10px !important;
     }
 
-    /* 2. Képek és Szöveg elrendezése */
-    /* Mobilon tiltsuk le a float-ot (lebegtetést), hogy ne legyen vékony a szövegsáv */
+	.elvalaszt{
+		background-color:#fff;
+		overflow:hidden;
+		height:20px;
+		margin-top:0px;
+		margin-bottom:0px;
+	}
+	
+	
+	
+/* 2. Képek és Szöveg elrendezése */
+/* Mobilon tiltsuk le a float-ot (lebegtetést), hogy ne legyen vékony a szövegsáv */
 	.pic, .freki, .motor, .reszel{
         float: none !important;
         display: block !important;
@@ -390,8 +406,8 @@ a{
 		
 
 
-    /* 3. Speciális elemek (Arduino kód és leírás) */
-    /* A kódbox ne legyen 45% széles és ne lebegjen jobbra */
+/* 3. Speciális elemek (Arduino kód és leírás) */
+/* A kódbox ne legyen 45% széles és ne lebegjen jobbra */
     p[style*="float:right"], 
     div[style*="float:right"],
     table[style*="float:right"] {
@@ -407,7 +423,7 @@ a{
         padding: 10px 0 !important;
     }
 
-    /* 4. Képességek (4 oszlopból legyen 1 vagy 2) */
+/* 4. Képességek (4 oszlopból legyen 1 vagy 2) */
     .kepessegek {
         grid-template-columns: 1fr !important; /* Egymás alá kerülnek */
         margin: 10px !important;
@@ -419,7 +435,7 @@ a{
         padding: 15px 0 !important;
     }
 
-    /* 5. Galéria és Polaroidok */
+/* 5. Galéria és Polaroidok */
     .munkaim {
         gap: 15px !important;
     }
@@ -430,7 +446,7 @@ a{
 		margin:7% !important;
     }
 
-    /* Flexboxos képsorok (kepek.html) egymás alá */
+/* Flexboxos képsorok (kepek.html) egymás alá */
     div[style*="display:flex"] {
         flex-direction: column !important;
         gap: 10px !important;
@@ -439,22 +455,22 @@ a{
     .kepek, .vizsz-kepek {
         width: 80% !important;
     }
-}
+
 
 /* FORRASZTÁSOS RÉSZ JAVÍTÁSA */
 
 /* 1. A képeket tartalmazó p elem (ami a .forr_text felett van) */
-.forraszt {
+	.forraszt {
     width: 45% !important;   /* A képek szélessége */
     float: left !important;  /* Egymás mellé úsztatjuk őket */
     margin: 1% !important;   /* Kis köz közöttük */
     height: auto !important;
     padding-bottom: 0 !important;	/* Levesszük a régi paddinget */
 	padding-left:10px;
-}
+	}
 
 /* 2. A szöveg (forr_text) beállítása */
-.forr_text {
+	.forr_text {
     clear: both !important;  /* Kényszerítjük, hogy a képek ALÁ kerüljön */
     width: 100% !important;  /* Kihúzzuk teljes szélességre */
     padding-left: 0 !important;   /* Töröljük a 32%-os behúzást */
@@ -462,12 +478,36 @@ a{
     padding-top: 20px !important; /* Egy kis távolság a képektől */
     text-align: justify;
     display: block !important;
-}
+	}
 
 /* 3. A képek szülőelemének (a p-nek) a tisztítása */
-.p > p[style*="margin-left:5%"] {
+	.p > p[style*="margin-left:5%"] {
     display: block !important;
     overflow: hidden !important; /* Hogy a floatolt képek ne lógjanak ki */
     margin-left: 0 !important;   /* Középre igazításhoz nullázzuk */
     text-align: center;
+	}
+
+/* Mobil nézet finomhangolása */
+
+    .kepek-kontener .reszel {
+        width: 45% !important; /* Mobilon kicsit nagyobbak lehetnek a képek egymás mellett */
+    }
+
+	.reszel.balra, .reszel.jobbra {
+        float: none !important;
+        width: 45% !important; /* Itt egymás mellé kerülnek */
+        display: inline-block !important;
+        margin: 2% !important;
+    }
+
+    .hajlitas-szekcio {
+        text-align: center; /* Hogy a képek középen legyenek */
+    }
+
+    .hajl_text {
+        margin: 0 !important;
+        width: 100% !important;
+        clear: both;
+    }
 }
