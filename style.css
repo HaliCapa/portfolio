@@ -268,6 +268,18 @@ a{
 	padding-bottom:5%;
 }
 
+.forr_text{
+	text-align:justify; 
+	padding-top:7%; 
+	padding-left:32%;
+	padding-right:5%;
+}
+
+.hajl_text{
+	width:44%;
+	text-align:justify;
+}
+
 /*Képek oldal*/
 
 .kepek{
@@ -336,7 +348,7 @@ a{
     /* 1. Menü és Tartalom eltolása */
     /* Mivel a menü fixed, lejjebb kell tolni a tartalmat, hogy ne takarja ki */
     .en, .p {
-        padding-top: 140px !important; 
+        padding-top: 100px !important; 
         margin-left: 15px !important;
         margin-right: 15px !important;
         font-size: 18px !important; /* Jobban olvasható betűméret mobilon */
@@ -354,7 +366,16 @@ a{
 
     /* 2. Képek és Szöveg elrendezése */
     /* Mobilon tiltsuk le a float-ot (lebegtetést), hogy ne legyen vékony a szövegsáv */
-    .pic, .gt, .tdk, .freki, .motor, .reszel, .forraszt, .arduino {
+	.pic, .freki, .motor, .reszel{
+        float: none !important;
+        display: block !important;
+        width: 50% !important;
+        height: auto !important;
+        margin: 15px auto !important;
+        padding: 0 !important;
+    }
+	
+	.gt, .tdk, .arduino, .hajl_text{
         float: none !important;
         display: block !important;
         width: 100% !important; /* Kitölti a képernyőt */
@@ -362,6 +383,12 @@ a{
         margin: 15px auto !important;
         padding: 0 !important;
     }
+	
+	.forr_text {
+        padding: 0 !important;
+    }
+		
+
 
     /* 3. Speciális elemek (Arduino kód és leírás) */
     /* A kódbox ne legyen 45% széles és ne lebegjen jobbra */
@@ -400,6 +427,7 @@ a{
     .polaroid {
         width: 80% !important; /* Mobilon legyen hangsúlyosabb */
         height: auto !important;
+		margin:7% !important;
     }
 
     /* Flexboxos képsorok (kepek.html) egymás alá */
@@ -409,6 +437,37 @@ a{
     }
 
     .kepek, .vizsz-kepek {
-        width: 100% !important;
+        width: 80% !important;
     }
+}
+
+/* FORRASZTÁSOS RÉSZ JAVÍTÁSA */
+
+/* 1. A képeket tartalmazó p elem (ami a .forr_text felett van) */
+.forraszt {
+    width: 45% !important;   /* A képek szélessége */
+    float: left !important;  /* Egymás mellé úsztatjuk őket */
+    margin: 1% !important;   /* Kis köz közöttük */
+    height: auto !important;
+    padding-bottom: 0 !important;	/* Levesszük a régi paddinget */
+	padding-left:10px;
+}
+
+/* 2. A szöveg (forr_text) beállítása */
+.forr_text {
+    clear: both !important;  /* Kényszerítjük, hogy a képek ALÁ kerüljön */
+    width: 100% !important;  /* Kihúzzuk teljes szélességre */
+    padding-left: 0 !important;   /* Töröljük a 32%-os behúzást */
+    padding-right: 0 !important;
+    padding-top: 20px !important; /* Egy kis távolság a képektől */
+    text-align: justify;
+    display: block !important;
+}
+
+/* 3. A képek szülőelemének (a p-nek) a tisztítása */
+.p > p[style*="margin-left:5%"] {
+    display: block !important;
+    overflow: hidden !important; /* Hogy a floatolt képek ne lógjanak ki */
+    margin-left: 0 !important;   /* Középre igazításhoz nullázzuk */
+    text-align: center;
 }
